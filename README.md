@@ -5,7 +5,7 @@ This is my first ever python program
 
 ## App running
 
-![screenshot](./screenshots/app.JPG)
+![screenshot](./screenshots/app.jpg)
 
 ## Credit
 - Thank you [Natan](https://github.com/Natan-Asrat)
