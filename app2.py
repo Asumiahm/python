@@ -135,7 +135,7 @@ for num in numbers:
     output=''
     for count in range (num):
       output += '*'
-    print(output)"""
+    print(output)
 # print an L
 numbers=[2,2,2,2,7]
 for num in numbers:
@@ -143,3 +143,47 @@ for num in numbers:
     for count in range(num):
         l += '*'
     print(l)
+#Lists
+names=['kubra', 'sumru', 'sevilay']
+names[0]='Kubra'
+print(names[-1]) # the last
+print(names[0:2])# they simply print the new list"""
+#practice finding the largest number in the list
+basket = [20, 35, 10, 69]
+maxi = basket[0]  # Initialize maxi with the first element
+for numbers in basket:
+    if numbers > maxi:
+        maxi = numbers  # Update maxi if the current number is greater
+print(f'This is the max: {maxi}')
+#more questions on list
+list1 = ["M", "na", "i", "Ke"]
+list2 = ["y", "me", "s", "lly"]
+list_n=[]
+for i in range (len(list1)):#or we can use for i1
+        combined= list1[i]+list2[i]
+        list_n.append(combined)
+print(list_n)
+#square of number
+numbers = [1, 2, 3, 4, 5, 6, 7]
+list_square=[]
+for i in range (len(numbers)):
+    square=numbers[i]*numbers[i]
+    list_square.append(square)
+print(list_square)
+#concatenate two lists
+list3= ["Hello ", "take "]
+list4 = ["Dear", "Sir"]
+list_new=[]
+for i, j in zip(list3,list4):
+    combin=i + j
+    list_new.append(combin)
+print(list_new)
+#or
+res=[i+j for i in list3 for j in list4]
+print(res)
+#remove empty set
+["Mike", "Emma", "Kelly", "Brad"]
+list1 = ["Mike", "", "Emma", "Kelly", "", "Brad"]
+# remove None from list1 and convert result into list
+res = list(filter(None, list1))
+print(res)
