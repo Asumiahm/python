@@ -82,7 +82,7 @@ while guess_count < guess_limit:
         print('It\'s lower, try again')
 else:
     if guess != numb:
-        print('You failed')"""
+        print('You failed')
 # Game 2
 action=""
 car_started=False
@@ -110,8 +110,29 @@ quit - to exit
         print('Exiting the program.')
         break # to make it quit, we used the break
     else:
-        print('I do not understand.')
-
-
-
-
+        print('I do not understand.')"""
+#For loops
+for item in ['Hindi', 'kubra']:
+    print(item)
+for items in range(6,10, 2): #here 2 i s step
+   print(items)# 10 is not included
+prices=[10,20,30]
+total = 0
+for price in prices:
+    total += price
+print(f'total: {total}')
+#Nested loop
+for x in range(4):
+    for y in range(3):
+        print(f'({x},{y})')
+# CHALLENGE
+numbers=[5,2,5,2,2]
+for num in numbers:
+      print('*' * num )
+# one solution, but with nested
+numbers=[5,2,5,2,2]
+for num in numbers:
+    output=''
+    for count in range (num):
+      output += '*'
+    print(output)
