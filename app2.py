@@ -120,7 +120,7 @@ prices=[10,20,30]
 total = 0
 for price in prices:
     total += price
-print(f'total: {total}')
+print(f 'total: {total}')
 #Nested loop
 for x in range(4):
     for y in range(3):
@@ -147,7 +147,9 @@ for num in numbers:
 names=['kubra', 'sumru', 'sevilay']
 names[0]='Kubra'
 print(names[-1]) # the last
-print(names[0:2])# they simply print the new list"""
+print(names[0:2])# they simply print the new list
+from os.path import split
+
 #practice finding the largest number in the list
 basket = [20, 35, 10, 69]
 maxi = basket[0]  # Initialize maxi with the first element
@@ -182,8 +184,175 @@ print(list_new)
 res=[i+j for i in list3 for j in list4]
 print(res)
 #remove empty set
-["Mike", "Emma", "Kelly", "Brad"]
 list1 = ["Mike", "", "Emma", "Kelly", "", "Brad"]
 # remove None from list1 and convert result into list
 res = list(filter(None, list1))
 print(res)
+#append
+list1 = [10, 20, [300, 400, [5000, 6000], 500], 30, 40]
+
+# understand indexing
+# list1[0] = 10
+# list1[1] = 20
+# list1[2] = [300, 400, [5000, 6000], 500]
+# list1[2][2] = [5000, 6000]
+# list1[2][2][1] = 6000
+
+# solution
+list1[2][2].append(7000)
+print(list1)
+#extend
+list1 = ["a", "b", ["c", ["d", "e", ["f", "g"], "k"], "l"], "m", "n"]
+sub_list = ["h", "i", "j"]
+
+# understand indexing
+# list1[2] = ['c', ['d', 'e', ['f', 'g'], 'k'], 'l']
+# list1[2][1] = ['d', 'e', ['f', 'g'], 'k']
+# list1[2][1][2] = ['f', 'g']
+
+# solution
+list1[2][1][2].extend(sub_list)
+print(list1)
+#replace
+list1 = [5, 10, 15, 20, 25, 50, 20]
+
+# get the first occurrence index
+index = list1.index(20)
+
+# update item present at location
+list1[index] = 200
+print(list1)
+#remove
+list1 = [5, 20, 15, 20, 25, 50, 20]
+
+# list comprehension
+# remove specific items and return a new list
+def remove_value(sample_list, val):
+    return [i for i in sample_list if i != val]
+
+res = remove_value(list1, 20)
+print(res)
+'''2d list
+#[5,2,1,5,7,4]
+#use append for last, and insert(where we want, what number added)
+# index(5)..then it returns the index to find if  5 is in the list, also 50 in list boolean value
+#count(5) which is 2, sort it sort it in place
+#remove a duplicated from the list
+numbers=[5,2,1,5,7,4]
+x=[]
+for item in numbers:
+    if item not in x:
+        x.append(item)
+print(x)
+# tuples are like list but with parenthesis and not edited only info wise
+tuple1 = (11, 22)
+tuple2 = (99, 88)
+tuple1, tuple2 = tuple2, tuple1
+print(tuple2)
+print(tuple1)
+# for copying tuple
+tuple1 = (11, 22, 33, 44, 55, 66)
+tuple2 = tuple1[3:-1]
+print(tuple2)
+# unpacking to retrieve form a tuple coordinate=(1,2,3) then x,y,z=coordinate print(y)
+ph=input('Phone:')
+number={'1': 'one',
+'2': 'two',
+'3':'three'
+}
+output=' '
+for ch in ph:
+    output+=number.get(ch,'!') + " "
+print(output)
+#Emoji convertor
+mssg=input('>')
+words=mssg.split(' ')
+emoji={
+    ':)': '😊',
+    ':(' :'😒'
+}
+output_e=' '
+for word in words:
+    output_e+=emoji.get(word, word) + " "
+print(output_e) 
+#extract a function for the above
+def sp(mssg):
+    words=mssg.split(" ")
+    emoji = {
+        ':)': '😊',
+        ':(': '😒'
+    }
+    change(words, emoji)
+def change( words, emoji):
+    output_e = ' '
+    for word in words:
+        output_e += emoji.get(word, word) + " "
+    print(output_e)
+sp('Hello :) how are you :(')
+def em_con(mssg):
+    words = mssg.split(' ')
+    emoji = {
+        ':)': '😊',
+        ':(': '😒'
+    }
+    output_e = ' '
+    for word in words:
+      output_e += emoji.get(word, word) + " "
+    return output_e
+mssg=input('>')
+res=em_con(mssg)
+print(res)
+# try and except
+try:
+    age=int(input("Age:"))
+    print( age)
+except ValueError:
+    print(" age can not be other than integer")"""
+#classes
+# to define new types to model real concepts, collects every class
+class SquareAction:
+    def __init__(self, x, y):
+        self.x=x
+        self.y=y
+    def move(self):
+        print('move')
+    def draw(self):
+        print('draw')
+S=SquareAction(10,20)
+print(S.x)
+S.draw()
+#constructors
+# a function that gets called at the time of calling
+def __init__(self, x, y):
+    self.x = x
+    self.y = y
+#Exercise
+class Person:
+    def __init__(self,name,age):
+         self.name=name
+         self.name2 = age
+         self.talk_count=0
+
+    def talk (self):
+        self.talk_count+=1
+        print(f'{self.name} talks. This is the {self.talk_count} time(s).')
+    def greet(self):
+        print(f'I am {self.name}')
+
+    def reset_talk_count(self):
+        self.talk_count = 0  # Reset the counter to 0
+        print(f'{self.name}\'s talk count has been reset.')
+name=input(" what is your name:")
+age = input("How old are you: ")
+P = Person(name,age)
+P.greet()
+
+# The person talks a few times
+P.talk()
+P.talk()
+
+# Reset the talk count
+P.reset_talk_count()
+
+# Person talks again
+P.talk()
