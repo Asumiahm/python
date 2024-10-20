@@ -56,7 +56,7 @@ if choice.lower() == 'l':
     print('you are' + f'{lbs}' +'lbs')
 elif choice== 'k':
     kg = int(weight) - 50
-    print( 'you are ' + f'{kg}' + 'kilo')# WE CAN SIMPLY USE A FORMATTED STRING f 'you are ...' """
+    print( 'you are ' + f'{kg}' + 'kilo')# WE CAN SIMPLY USE A FORMATTED STRING f 'you are ...'
 #WhileLoops
 i=1
 j=2
@@ -66,11 +66,10 @@ while i<=5:
     i=i+1
     j=j+2
 print('done')
-#Game
+#Game 1
 numb = 7
 guess_count = 0
 guess_limit = 3
-
 while guess_count < guess_limit:
     guess = int(input('your guess: '))
     guess_count += 1
@@ -83,5 +82,36 @@ while guess_count < guess_limit:
         print('It\'s lower, try again')
 else:
     if guess != numb:
-        print('You failed')
-#game 3
+        print('You failed')"""
+# Game 2
+action=""
+car_started=False
+while True:
+    action = input('>').lower().strip()
+    if action == 'help':
+        print(''' 
+start - to start the car
+stop - to stop the car
+quit - to exit
+        ''')
+    elif action == 'start':
+        if car_started:
+           print('car already started')
+        else:
+            car_started=True
+            print('starting the car....')
+    elif action == 'stop':
+        if not car_started:
+           print('car already stopped')
+        else:
+            car_started=False
+            print('stopping the car....')
+    elif action == 'quit':
+        print('Exiting the program.')
+        break # to make it quit, we used the break
+    else:
+        print('I do not understand.')
+
+
+
+
