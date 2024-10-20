@@ -1,3 +1,5 @@
+
+
 """ weight_p=input( 'how much you weigh? ')
 weight_k= 0.45* int(weight_p)
 print(weight_k)
@@ -307,7 +309,7 @@ try:
     age=int(input("Age:"))
     print( age)
 except ValueError:
-    print(" age can not be other than integer")"""
+    print(" age can not be other than integer")
 #classes
 # to define new types to model real concepts, collects every class
 class SquareAction:
@@ -356,3 +358,103 @@ P.reset_talk_count()
 
 # Person talks again
 P.talk()
+
+name=input(" what is your name:")
+age = input("How old are you: ")
+Z=Person(name,age)
+
+Z.greet()
+
+# The person talks a few times
+Z.talk()
+Z.talk()
+
+# Reset the talk count
+Z.reset_talk_count()
+
+# Person talks again
+Z.talk()
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        self.talk_count = 0
+
+    def talk(self):
+        self.talk_count += 1
+        print(f'{self.name} talks. This is the {self.talk_count} time(s).')
+
+    def greet(self):
+        print(f'Hello, my name is {self.name} and I am {self.age} years old.')
+
+    def reset_talk_count(self):
+        self.talk_count = 0  # Reset the counter to 0
+        print(f'{self.name}\'s talk count has been reset.')
+
+# Loop to keep interacting with the program
+while True:
+    choice = input("Choose an option: 1) Create Person 2) Talk 3) Reset Talk Count 4) Exit\n> ")
+
+    if choice == '1':
+        # Create a new person
+        name = input("What is your name: ")
+        age = input("How old are you: ")
+        P = Person(name, age)
+        P.greet()
+
+    elif choice == '2':
+        # Person talks
+        if 'P' in locals():  # Check if a person has been created
+            P.talk()
+        else:
+            print("Please create a person first.")
+
+    elif choice == '3':
+        # Reset talk count
+        if 'P' in locals():
+            P.reset_talk_count()
+        else:
+            print("Please create a person first.")
+
+    elif choice == '4':
+        print("Exiting the program.")
+        break  # Exit the loop
+
+    else:
+        print("Invalid choice, please choose again.")
+#inheritance
+class Mammal:
+    def walk(self):
+        print ('walk')
+class Dog(Mammal):
+    def bark (self): # we can also write pass
+        print('bark')
+class Cat(Mammal):
+    def walk(self):
+        pass
+d=Dog()
+d.walk()
+d.bark()
+#Modules
+# organize file into multiple files
+print (Conv.to_kg(20))
+# maximum number
+import Conv
+numbers=[106,35,63,42,98,65,89,23,45,73,89]
+F = Conv.FindMax(numbers)
+print(max(numbers))
+#packages
+# organize related modcules in to packages( mall{ men: shoes women:cloth
+import ecommerce.shipping
+ecommerce.shipping.cal_ship()# is very long
+from ecommerce.shipping import cal_ship
+cal_ship()
+#Built-in modules"""
+import random
+members=['john','mary','siri']
+leader=random.choice(members)
+print(leader)
+for i in range(3):
+    print(random.randint(20,30))
+    print(random.random())
+#Exercise
