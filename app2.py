@@ -110,7 +110,7 @@ quit - to exit
         print('Exiting the program.')
         break # to make it quit, we used the break
     else:
-        print('I do not understand.')"""
+        print('I do not understand.')
 #For loops
 for item in ['Hindi', 'kubra']:
     print(item)
@@ -135,4 +135,11 @@ for num in numbers:
     output=''
     for count in range (num):
       output += '*'
-    print(output)
+    print(output)"""
+# print an L
+numbers=[2,2,2,2,7]
+for num in numbers:
+    l = ''
+    for count in range(num):
+        l += '*'
+    print(l)
