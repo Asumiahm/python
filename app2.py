@@ -449,7 +449,7 @@ import ecommerce.shipping
 ecommerce.shipping.cal_ship()# is very long
 from ecommerce.shipping import cal_ship
 cal_ship()
-#Built-in modules"""
+#Built-in modules
 import random
 members=['john','mary','siri']
 leader=random.choice(members)
@@ -458,3 +458,67 @@ for i in range(3):
     print(random.randint(20,30))
     print(random.random())
 #Exercise
+import random
+class Dice:
+    def __init__(self,tuples_range):
+        self.tuples_range=tuples_range
+    def roll(self):
+        selected= random.choice(self.tuples_range)
+        return selected
+tuple_range=[(1,2),(3,4),(3,5)]# or we can simply generate a randint form 1 t0 6 (1,6)
+d=Dice(tuple_range)
+print( d.roll() )
+#short answer
+class Dice:
+    def roll(self):
+        first=random.randint(1,6)
+        second=random.randint(1, 6)
+        return first, second
+d=Dice()
+print(d.roll())
+# how to work on directories
+from pathlib import Path
+p = Path ("emailsworks,(works)")
+print(p.exists())
+print(p.rename('emailsworks,(works)'))
+p.rmdir()
+#use glob to find files...it is another level
+# Yay Project One, automate the process and also add a graph
+import openpyxl as xl
+from openpyxl.chart import BarChart, Reference
+def process_workbook(filename):
+    wb = xl.load_workbook('filename')
+    sheet = wb['Sheet1']
+    # print(cell.value)
+
+    for row in range(2, sheet.max_row + 1):
+        cell = sheet.cell(row, 3)
+        corrected_price = 0.9 * cell.value
+        corrected_price_cell = sheet.cell(row, 4)
+        corrected_price_cell.value = corrected_price
+
+    # to add a chart
+    values = Reference(sheet,
+                       min_row=2,
+                       max_row=sheet.max_row,
+                       min_col=4,
+                       max_col=4)
+    B = BarChart()
+    B.add_data(values)
+    sheet.add_chart(B, 'e2')
+    wb.save('filename')
+
+process_workbook(tansactions2.xlsx)"""
+#Machine Learning
+'''subset of ai,scan an image that tells if dog is dog, and cat is cat
+  give it a lots of data,then train it, for example in self-deriving cars, robotics 
+  Steps:
+  1.import data
+  2.clean the data(so that it does not learn bad pattern
+  3.split the data into training and test
+  4.create a model
+  5. train model,
+  6.make prediction, 
+  7.evaluate and improve
+  # Libraries.Numpy,pandas,MatPlotLib,scikit-learn'''
+
